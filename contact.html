@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Awesome Church International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo"><span class="logo-icon">A</span><span class="logo-text">AWESOME<small>CHURCH INTERNATIONAL</small></span></a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="navigation" id="navigation">
+            <a href="index.html">Home</a><a href="about.html">About Us</a><a href="ministries.html">Ministries</a>
+            <a href="services.html">Services</a><a href="sermons.html">Sermons</a>
+            <a href="events.html">Events</a><a href="live.html">Live</a>
+            <a href="contact.html" class="nav-button active">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">WE WOULD LOVE TO HEAR FROM YOU</span>
+            <h1>Get In <span>Touch</span></h1>
+            <p>Find our location or send us a message.</p>
+            <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container contact-grid">
+            <div class="contact-info reveal">
+                <span class="section-label">VISIT OUR CHURCH</span>
+                <h2>We look forward to <span>welcoming you.</span></h2>
+
+                <div class="contact-detail">
+                    <span>⌖</span>
+                    <div><h3>Our Address</h3><p>109 Old Express, Aba, Abia State, Nigeria.</p></div>
+                </div>
+
+                <div class="contact-detail">
+                    <span>✉</span>
+                    <div><h3>Email</h3><p>Official email address to be provided.</p></div>
+                </div>
+
+                <div class="contact-detail">
+                    <span>☎</span>
+                    <div><h3>Phone</h3><p>Official phone number to be provided.</p></div>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" id="contact-form">
+                <h2>Send Us a Message</h2>
+
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
+
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="Enter your email" required>
+
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="What is your message about?" required>
+
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+                <button type="submit" class="btn btn-dark">Prepare Message</button>
+                <p class="form-note">This form currently prepares an email message; it does not send or store submissions.</p>
+                <p class="form-status" id="form-status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="map-placeholder">
+                <span>⌖</span>
+                <h2>Find Awesome Church International</h2>
+                <p>109 Old Express, Aba, Abia State, Nigeria.</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=109+Old+Express+Aba+Abia+State+Nigeria" target="_blank" rel="noopener noreferrer">Search this address on Google Maps ↗</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo footer-logo"><span class="logo-icon">A</span><span class="logo-text">AWESOME<small>CHURCH INTERNATIONAL</small></span></a><p>A place to grow in faith, discover purpose and experience God's presence.</p></div>
+        <div class="footer-links"><h3>Explore</h3><a href="about.html">About Us</a><a href="ministries.html">Ministries</a><a href="services.html">Services</a></div>
+        <div class="footer-links"><h3>Connect</h3><a href="sermons.html">Sermons</a><a href="events.html">Events</a><a href="live.html">Live</a></div>
+        <div class="footer-links"><h3>Visit Us</h3><p>109 Old Express, Aba, Abia State, Nigeria.</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© <span id="current-year"></span> Awesome Church International. All rights reserved.</p></div></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

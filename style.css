@@ -1,0 +1,1521 @@
+/* =====================================================
+   AWESOME CHURCH INTERNATIONAL
+   COMPLETE RESPONSIVE WEBSITE STYLESHEET
+===================================================== */
+
+/* 1. GLOBAL SETTINGS
+===================================================== */
+
+:root {
+    --green: #103b2b;
+    --dark-green: #08291e;
+    --deep-green: #061c15;
+    --gold: #d4af37;
+    --cream: #f8f5ed;
+    --white: #ffffff;
+    --text: #26352d;
+    --muted: #777f78;
+    --light-green: #e9f0e9;
+    --border: #e7e5dc;
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    --transition: 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.intro-heading h2,
+.pastor-content h2 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 span,
+.intro-heading h2 span,
+.pastor-content h2 span {
+    color: var(--gold);
+}
+
+.section-heading p,
+.intro-text p {
+    color: var(--muted);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 800;
+    transition: gap var(--transition), color var(--transition);
+}
+
+.text-link:hover {
+    gap: 17px;
+    color: #a18024;
+}
+
+.text-link span {
+    color: var(--gold);
+}
+
+
+/* 2. HEADER AND NAVIGATION
+===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--dark-green);
+    transition: background var(--transition),
+                box-shadow var(--transition);
+}
+
+.header.scrolled {
+    background: rgba(8, 41, 30, 0.97);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.16);
+}
+
+.nav-container {
+    width: min(1250px, 92%);
+    min-height: 85px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+.logo-text small {
+    margin-top: 5px;
+    color: var(--gold);
+    font-family: "DM Sans", sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.navigation a {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 12px;
+    font-weight: 700;
+    transition: color var(--transition);
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--gold);
+}
+
+.navigation .nav-button {
+    padding: 11px 18px;
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    color: var(--gold);
+}
+
+.navigation .nav-button:hover {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background: transparent;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--white);
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.menu-toggle.active span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* 3. BUTTONS
+===================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 27px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: background var(--transition),
+                color var(--transition),
+                border-color var(--transition),
+                transform var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+.btn-gold:hover {
+    background: var(--white);
+    color: var(--green);
+}
+
+.btn-outline {
+    border-color: rgba(255, 255, 255, 0.7);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--green);
+}
+
+.btn-dark {
+    background: var(--green);
+    color: var(--white);
+}
+
+.btn-dark:hover {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+
+/* 4. HOMEPAGE HERO
+===================================================== */
+
+.hero {
+    min-height: 680px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(6, 28, 21, 0.96), rgba(6, 28, 21, 0.72)),
+        url("images/church-hero.jpg") center/cover no-repeat,
+        var(--dark-green);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.13), transparent 35%);
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, 90%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 90px 0;
+}
+
+.hero-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(43px, 6.5vw, 76px);
+    line-height: 1.08;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--gold);
+}
+
+.hero-content > p {
+    max-width: 610px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.hero-location span {
+    color: var(--gold);
+}
+
+.hero-side {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 35px;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
+}
+
+.card-top-label {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero-card h3 {
+    margin: 18px 0 12px;
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    line-height: 1.25;
+}
+
+.hero-card p {
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+
+.hero-card a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero-scroll span {
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+}
+
+
+/* 5. INNER PAGE HERO
+===================================================== */
+
+.page-hero {
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 20px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.12), transparent 30%),
+        linear-gradient(rgba(6, 28, 21, 0.94), rgba(6, 28, 21, 0.94)),
+        var(--green);
+}
+
+.page-hero h1 {
+    margin: 10px 0;
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.2;
+}
+
+.page-hero h1 span {
+    color: var(--gold);
+}
+
+.page-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.breadcrumb {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.breadcrumb a {
+    color: var(--gold);
+}
+
+
+/* 6. HOMEPAGE INTRODUCTION
+===================================================== */
+
+.intro-section {
+    background: var(--cream);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.intro-heading h2 {
+    max-width: 500px;
+}
+
+.intro-text p {
+    font-size: 15px;
+}
+
+
+/* 7. WEEKLY PROGRAMMES
+===================================================== */
+
+.programme-section {
+    background: var(--white);
+}
+
+.programme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.programme-card {
+    min-width: 0;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--cream);
+    transition: transform var(--transition),
+                background var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+.programme-card:hover {
+    transform: translateY(-6px);
+    background: var(--light-green);
+    border-color: var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.programme-day {
+    color: #a18024;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.programme-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    margin: 18px 0;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--gold);
+    font-size: 19px;
+}
+
+.programme-card h3 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.programme-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.center-button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+/* 8. PASTOR SECTION
+===================================================== */
+
+.pastor-section {
+    background: var(--dark-green);
+}
+
+.pastor-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.pastor-image {
+    min-width: 0;
+}
+
+.pastor-placeholder {
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.2), transparent 40%),
+        linear-gradient(135deg, #174a35, #061c15);
+}
+
+.pastor-placeholder span {
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 70px;
+    font-weight: 800;
+}
+
+.pastor-content h2 {
+    color: var(--white);
+}
+
+.pastor-content h2 span {
+    display: block;
+}
+
+.pastor-content h3 {
+    margin: 18px 0 12px;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+}
+
+.pastor-content p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* 9. LEADERSHIP SECTION
+===================================================== */
+
+.leadership-section {
+    background: var(--cream);
+}
+
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.leader-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+
+    opacity: 1;
+    transform: none;
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow var(--transition);
+}
+
+.js .leader-card {
+    opacity: 0;
+    transform: translateX(-65px);
+}
+
+.js .leader-card.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.leader-card:hover {
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.13);
+}
+
+.leader-photo {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--green), #426d50);
+}
+
+.leader-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-placeholder span {
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.leader-info {
+    min-height: 130px;
+    padding: 22px;
+    text-align: center;
+}
+
+.leader-role {
+    display: block;
+    margin-bottom: 8px;
+    color: #a18024;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.leader-info h3 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+
+/* 10. YOUTH LEADERSHIP
+===================================================== */
+
+.youth-section {
+    background: #eeeae0;
+}
+
+/* Your HTML uses leaders-grid youth-leaders-grid.
+   This selector styles that exact combination. */
+
+.youth-leaders-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.youth-card {
+    border-bottom: 3px solid var(--gold);
+}
+
+
+/* 11. MINISTRY COMMUNITY
+===================================================== */
+
+.ministry-section {
+    background: var(--white);
+}
+
+
+/* 12. SERMONS
+===================================================== */
+
+.sermon-placeholder {
+    max-width: 760px;
+    margin: auto;
+    padding: 65px 25px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.sermon-symbol {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--gold);
+    font-size: 22px;
+}
+
+.sermon-placeholder h3 {
+    margin-bottom: 10px;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.sermon-placeholder p {
+    color: var(--muted);
+}
+
+
+/* 13. EVENTS
+===================================================== */
+
+.event-empty {
+    max-width: 760px;
+    margin: auto;
+    padding: 55px 25px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    text-align: center;
+}
+
+.event-empty h3 {
+    margin-bottom: 10px;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+}
+
+.event-empty p {
+    color: var(--muted);
+}
+
+
+/* 14. SERVICES SCHEDULE
+===================================================== */
+
+.schedule-list {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 35px;
+    align-items: center;
+    gap: 25px;
+    padding: 23px 28px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--white);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.035);
+    transition: transform var(--transition),
+                border-color var(--transition);
+}
+
+.schedule-item:hover {
+    transform: translateX(5px);
+    border-color: var(--gold);
+}
+
+.schedule-day {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.schedule-day span {
+    display: block;
+    color: #a18024;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.schedule-details h3 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+.schedule-details p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.schedule-arrow {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+
+/* 15. LIVE PAGE
+===================================================== */
+
+.live-container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.live-screen {
+    min-height: 400px;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at center, rgba(212, 175, 55, 0.12), transparent 45%),
+        var(--deep-green);
+    color: var(--white);
+    text-align: center;
+}
+
+.live-screen-content {
+    max-width: 600px;
+}
+
+.live-indicator {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 30px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.live-play {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    margin: 25px auto;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-size: 22px;
+}
+
+.live-screen h2 {
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+}
+
+.live-screen p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.live-info {
+    padding: 30px 10px 0;
+    text-align: center;
+}
+
+.live-info h3 {
+    margin-bottom: 8px;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.live-info p {
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+
+/* 16. ABOUT PAGE
+===================================================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-visual-inner {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--green), var(--deep-green));
+    color: var(--gold);
+}
+
+.about-visual-inner > span {
+    font-family: "Playfair Display", serif;
+    font-size: 90px;
+    font-weight: 800;
+}
+
+.about-visual-inner p {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.about-content h2 {
+    margin: 10px 0 18px;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: var(--muted);
+}
+
+.mission-section {
+    background: var(--white);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.mission-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--cream);
+}
+
+.mission-card h3 {
+    margin: 15px 0 10px;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+}
+
+.mission-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 17. CONTACT PAGE
+===================================================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 45px;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+}
+
+.contact-info > p {
+    margin-bottom: 25px;
+    color: var(--muted);
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 22px 0;
+}
+
+.contact-detail > span {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--gold);
+}
+
+.contact-detail h3 {
+    color: var(--green);
+    font-size: 14px;
+}
+
+.contact-detail p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.contact-form {
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+    background: var(--cream);
+    color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.form-status {
+    margin-top: 15px;
+    color: var(--green);
+    font-size: 13px;
+}
+
+.map-section {
+    padding-top: 0;
+    background: var(--cream);
+}
+
+.map-placeholder {
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--light-green);
+    text-align: center;
+}
+
+.map-placeholder a {
+    color: var(--green);
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+
+/* 18. CALL TO ACTION
+===================================================== */
+
+.cta-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.12), transparent 35%),
+        var(--green);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.cta-content h2 {
+    margin-bottom: 15px;
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+}
+
+.cta-content h2 span {
+    color: var(--gold);
+}
+
+.cta-content p {
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* 19. FOOTER
+===================================================== */
+
+.footer {
+    padding-top: 65px;
+    background: var(--deep-green);
+    color: var(--white);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer-brand > p {
+    max-width: 300px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+}
+
+.footer-links h3 {
+    margin-bottom: 18px;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.footer-links a,
+.footer-links p {
+    display: block;
+    margin-bottom: 11px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* 20. GENERAL REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.js .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 21. RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .navigation {
+        gap: 13px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .hero-container {
+        gap: 30px;
+    }
+
+    .leaders-grid,
+    .youth-leaders-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .nav-container {
+        min-height: 75px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 75px);
+        padding: 25px 5%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        overflow-y: auto;
+        background: var(--dark-green);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation a {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .navigation .nav-button {
+        width: auto;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .hero-content {
+        padding: 85px 0 35px;
+    }
+
+    .hero-side {
+        justify-content: flex-start;
+        padding-bottom: 75px;
+    }
+
+    .hero-card {
+        max-width: 450px;
+    }
+
+    .intro-grid,
+    .pastor-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .programme-grid,
+    .mission-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .schedule-item {
+        grid-template-columns: 80px 1fr 25px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .logo-text small {
+        font-size: 7px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-location {
+        align-items: flex-start;
+        font-size: 11px;
+    }
+
+    .programme-grid,
+    .leaders-grid,
+    .youth-leaders-grid,
+    .mission-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-photo {
+        height: 280px;
+    }
+
+    .pastor-placeholder {
+        min-height: 300px;
+    }
+
+    .page-hero {
+        min-height: 280px;
+        padding: 60px 15px;
+    }
+
+    .schedule-item {
+        grid-template-columns: 65px 1fr 18px;
+        gap: 12px;
+        padding: 18px 14px;
+    }
+
+    .schedule-day {
+        font-size: 20px;
+    }
+
+    .schedule-details h3 {
+        font-size: 16px;
+    }
+
+    .schedule-details p {
+        font-size: 12px;
+    }
+
+    .contact-form {
+        padding: 23px;
+    }
+
+    .live-screen {
+        min-height: 300px;
+    }
+
+    .live-screen h2 {
+        font-size: 24px;
+    }
+
+    .footer-grid {
+        gap: 30px;
+    }
+}
+
+
+/* 22. ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
